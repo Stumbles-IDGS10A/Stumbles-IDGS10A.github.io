@@ -1,15 +1,13 @@
-var appShell = ["home.html",
+var appShell = ["index.html",
     "index.css",
     "script.js",
-    "/img/icons/arrow-trend-up-solid-gray.svg",
+    "about.html",
+    "features.html",
+    "/img/logo-szomb.png",
     "/img/icons/house-solid-gray.svg",
     "/img/icons/info-solid-gray.svg",
     "/img/icons/star-solid-gray.svg",
-    "/img/News/new1.jpg",
-    "/img/News/new2.png",
-    "/img/News/new3.png",
     "/img/parallax/parallax-background-home.png",
-    "/img/logo-szomb.png"
 ]
 
 const VERSION = "v01"
@@ -21,3 +19,11 @@ self.addEventListener("install",function(e){
         localCache.addAll(appShell)
     })()
 })
+
+self.addEventListener("fetch", fetchEvent => {
+    fetchEvent.respondWith(
+      caches.match(fetchEvent.request).then(res => {
+        return res || fetch(fetchEvent.request)
+      })
+    )
+  })
