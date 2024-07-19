@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Jacquard+12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+.header{
+    display: flex;
+    background-color:rgb(0, 0, 0);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.header-logo{
+    font-family: "Bebas neue";
+    font-size: 1.5rem;
+    color: white;
+    font-weight:lighter;
+    letter-spacing: 2px;
+    font-style: italic;
+}
+
+/* Parallax backgrounds */
+.background-img-home{
+    background-image: url("img/parallax/parallax-background-home.png");
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+}
+.background-img-about{
+    background-image: url("img/parallax/parallax-background-about.jpg");
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+}
+.background-img-features{
+    background-image: url("img/parallax/parallax-background-features.png");
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+}
+.background-img-updates{
+    background-image: url("img/parallax/parallax-background-updates.jpg");
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+/* Main */
+.main-home {
+    background-color: rgb(21, 15, 28);
+    color: #fff;
+    font-family: "Jacquard 12", consolas;
+    font-size: 1.3em;
+}
+.home-about{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: rgb(21, 15, 28);
+    padding: 2rem;
+    margin-top: 1rem;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: rgb(21, 15, 28);
+    padding: 2rem;
+}
+
+/* Footer */
+.footer{
+    background-color: rgb(50, 50, 50);
+    padding: 1rem;
+    font-family: 'Lato';
+    font-size: 0.7rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Barra de navegación previa*/
+ .nav-prev {
+    padding: 1rem;
+
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3); 
+    z-index: 1;
+    font-size: 0.7rem;
+    left: 0;
+    line-height: 1.2;
+}
+.nav-list-prev {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-item-prev {
+    list-style-type: none;
+}
+.nav-item-prev a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #8a8a8a; 
+    font-family: sans-serif;
+    font-size: .7rem; 
+    padding: 0.2rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-item-prev a:hover {
+    color: #c91616;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 5px; 
+} 
+
+
+/* Slider */
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: .5rem;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: .5rem;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.nav{
+    display: none;
+}
+
+@media(max-width: 576px){
+/* Barra de navegación */
+.nav{
+    display: block;
+    align-items: center;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: .7rem;
+    line-height: 1.2;
+}
+.nav-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-item{
+    list-style-type: none;
+    display: flex; 
+}
+
+.nav-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #8a8a8a; 
+    font-family: sans-serif;
+    font-size: .7rem; 
+    padding: 0.2rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-item a:hover {
+    color: #c91616;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 5px; 
+} 
+
+.nav-prev{
+    display: none;
+}
+}
