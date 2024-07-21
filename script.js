@@ -1,3 +1,25 @@
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    notification();
+  });
+  
+  function notification() {
+    Notification.requestPermission().then(resultado => {
+      console.log('Respuesta: ', resultado);
+      if (resultado === 'granted') {
+        new Notification("Bienvenido", {
+          body: '¡Bienvenido a la página de Survival Zomb!',
+          icon: 'img/logo-szomb.png'
+        });
+      } 
+    });
+  }
+
+//SLIDER
+
 const sliderList = document.querySelector('.slider-list');
 const slides = document.querySelectorAll('.slide');
 const prevButton = document.querySelector('.prev');
